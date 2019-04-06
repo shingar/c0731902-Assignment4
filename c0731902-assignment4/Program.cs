@@ -15,6 +15,7 @@ namespace c0731902_assignment4
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
+            p.ReadTextFiles();
         }
         public void Run()
         {
@@ -24,7 +25,7 @@ namespace c0731902_assignment4
         public void ReadTextFiles()
         {
             //Read file using StreamReader.Reads file line by line
-            using (StreamReader file = new StreamReader("c:/area51/beowulf.txt"))
+            using (StreamReader file = new StreamReader(@"U:\Users\731902\shingarr.txt"))
             {
                 int counter = 0;
                 string ln;
@@ -32,9 +33,11 @@ namespace c0731902_assignment4
                 {
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
+                    counter++;
+
 
                 }
-                file.close();
+                file.Close();
                 Console.WriteLine($"File has{counter}lines");
             }
         }
